@@ -1,21 +1,20 @@
-// Define for the content object should look like
-interface Content {
-    name: string,
-    exerciseCount: number
-}
+import {CoursePart} from "../types";
 
 interface TotalProps {
     // Array of the content objects
-    exercises: Content[]
+    exercises: CoursePart[]
 }
 
 const Total = (props: TotalProps) => {
     return (
-        <p>
-            Number of exercises{" "}
-            {/* Calculate the total from the exerciseCount object values */}
-            {props.exercises.reduce((carry, part) => carry + part.exerciseCount, 0)}
-        </p>
+        <div>
+            <br/>
+            <p>
+                Number of exercises in total{" "}
+                {/* Calculate the total from the exerciseCount object values */}
+                {props.exercises.reduce((carry, part) => carry + part.exerciseCount, 0)}
+            </p>
+        </div>
     );
 }
 
